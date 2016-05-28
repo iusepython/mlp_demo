@@ -5,7 +5,7 @@ function [Ws,bs] = finetune(X,Y,Ws,bs,ds,lambda,max_iter,loss_type,activation_ty
     % init
     theta = Wb2theta(Ws,bs);
     % random sampling
-    batch_size = size(X,1)/10;
+    batch_size = size(X,1);
     idx = randsample(size(X,1),batch_size);
     xs = X(idx,:);
     ys = Y(idx,:);

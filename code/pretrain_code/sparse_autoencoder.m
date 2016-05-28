@@ -10,7 +10,7 @@ function [W1,b1] = sparse_autoencoder(X,Y,hidden_size,lambda,beta,rho,max_iter,a
     bs{2} = amp*randn(1,d3);
     theta = [Ws{1}(:);Ws{2}(:);bs{1}(:);bs{2}(:)];
     % random sampling
-    batch_size = size(X,1)/10;
+    batch_size = size(X,1);
     idx = randsample(size(X,1),batch_size);
     xs = X(idx,:);
     ys = Y(idx,:);
